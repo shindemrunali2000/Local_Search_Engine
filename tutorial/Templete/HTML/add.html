@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/add.css">
+
+</head>
+<body>
+    <form method="POST">
+
+        {% csrf_token %}
+        <div class="container">
+        <h1>Averties</h1>
+        
+        <label for="Product_Name">Product Name</label>
+        <input type="text" placeholder="Enter your First_name" name="product_Name" id="Product_Name" required="required"  class="modal-form-input" ><br><br>
+
+        <label for="Category">Category</label>
+        <input type="text" placeholder="Enter your Email" name="category" id="Category" required="required"  class="modal-form-input" ><br><br>
+
+        <label for="Price"> Price</label>
+        <input type="text" placeholder="Enter your Email" name="price" id="Price" required="required"  class="modal-form-input" ><br><br>
+
+        <label for="Location_City">Location City</label>
+        <input type="text" placeholder="Enter your Email" name="location_City" id="Location_City" required="required"  class="modal-form-input" ><br><br>
+
+        <label for="Contact_Number">Contact Number</label>
+        <input name="contact_Number" id="Contact_Number" required="required" type="text" class="modal-form-input" placeholder="Enter your password"><br><br>
+
+        <label for="Product_Image">Uploade Product Image</label>
+        <input name="product_Image" id="Product_Image" required="required" type="file" class="modal-form-input" placeholder="confirm_password"><br><br>
+        
+        <input type="submit" value="submit"><br>
+
+    </div>
+    </form>
+</body>
+</html>

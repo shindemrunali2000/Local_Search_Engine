@@ -1,0 +1,48 @@
+<html lang="en"><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+  
+   
+</head>
+<body> 
+    <h1>Signup</h1><br>
+    
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        
+
+        <label for="email"> Email</label>
+        <input name="user" id="username" required="required" type="text" class="modal-form-input" placeholder="Enter your Email">
+        <label for="password">Enter Password</label>
+        <input name="user" id="password" required="required" type="text" class="modal-form-input" placeholder="Enter your password">
+        <label for="confirm_password">Confirm Password</label>
+        <input name="user" id="password" required="required" type="text" class="modal-form-input" placeholder="confirm_password"><br>
+        <input type="submit" value="submit">
+        
+    </form>
+
+<!-- </div>
+    
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+    <label for="username">Enter UserName</label><br>
+    <input type="text" name="username" id="username"></div>
+    <label for="password">Enter Your password</label>
+    <input type="text" name="password" id="password">
+    <label for="confirm_password">Enter Your password</label>
+    <input type="text" name="confirm_password" id="password">
+    <input type="submit" value="Submit">
+
+</div> -->
+
+</body>
+</html>

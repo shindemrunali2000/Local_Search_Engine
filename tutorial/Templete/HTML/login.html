@@ -1,0 +1,39 @@
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        form{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height:70vh;
+            margin: 40px;
+            width: 1100px;
+        }
+
+        body {
+            background-image: url(".../images/bg1.jpg");
+            background-repeat:no-repeat;
+            background-size:100%; 
+            background-color: #00FFFF; 
+        }
+</style>
+</head>
+<body>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="email">Enter your email</label>
+            <input type="text" name="email" id=""><br>
+            <label for="pass">Enter your password</label>
+            <input type="password" name="pass"><br>
+            <input type="submit" value="login">
+        </form>
+    </div>
+</body>
+</html>

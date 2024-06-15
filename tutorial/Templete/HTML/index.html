@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>This is all the student data</h1>
+  <ul>
+      {% for record in records%}
+      
+          <h2>{{record.first_name}}</h2>
+          <h2>{{record.last_name}}</h2>
+          <h2>{{record.age}}</h2>
+          <h2>{{record.course}}</h2>
+      
+      {% endfor %}
+  </ul>
+
+
+</body></html>
