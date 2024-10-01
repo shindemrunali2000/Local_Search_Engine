@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Entertainment Blog</h1>
+    <div class="blog-container">
+        {% for Entertainment in Entertainments %}
+        <div class="blog-post">
+            <h2>{{ Entertainment.name }}</h2>
+            {% if Entertainment.image %}
+            <img src="{{ Entertainment.image.url }}" alt="{{ Entertainment.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Entertainment.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Entertainment.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Entertainment.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

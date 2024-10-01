@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event_Organizer Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Event Organizer Blog</h1>
+    <div class="blog-container">
+        {% for event_organizer in event_organizers %}
+        <div class="blog-post">
+            <h2>{{ event_organizer.name }}</h2>
+            {% if event_organizer.image %}
+            <img src="{{ event_organizer.image.url }}" alt="{{ event_organizer.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ event_organizer.location_city }}</p>
+            <p><strong>Contact:</strong> {{ event_organizer.contact_number }}</p>
+            <p><strong>Address:</strong> {{ event_organizer.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

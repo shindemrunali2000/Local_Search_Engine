@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Doctor Blog</h1>
+    <div class="blog-container">
+        {% for Doctor in Doctors %}
+        <div class="blog-post">
+            <h2>{{ Doctor.name }}</h2>
+            {% if Doctor.image %}
+            <img src="{{ Doctor.image.url }}" alt="{{ Doctor.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Doctor.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Doctor.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Doctor.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

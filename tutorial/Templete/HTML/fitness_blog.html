@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fitness centers Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>fitness centers Blog</h1>
+    <div class="blog-container">
+        {% for fitness_center in fitness_centers %}
+        <div class="blog-post">
+            <h2>{{ fitness_center.name }}</h2>
+            {% if fitness_center.image %}
+            <img src="{{ fitness_center.image.url }}" alt="{{ fitness_centers.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ fitness_center.location_city }}</p>
+            <p><strong>Contact:</strong> {{ fitness_center.contact_number }}</p>
+            <p><strong>Address:</strong> {{ fitness_center.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -18,13 +18,19 @@ input{
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     border-radius: 5px ;
+    font-weight: bold;
     
 }
 body{
     margin:0px;
     padding:0px;
-    background-color: #921357; 
+    
     transition: all;
+    background-image: url(../static/b8.jpg);
+    font-weight: bold;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
 }
 
 /* div{

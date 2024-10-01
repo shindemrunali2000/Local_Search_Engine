@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloths Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+    
+</head>
+<body>
+    <h1>Cloths Blog</h1>
+    <div class="blog-container">
+        {% for cloth in cloths %}
+        <div class="blog-post">
+            <h2>{{ cloth.name }}</h2>
+            {% if cloth.image %}
+            <img src="{{ cloth.image.url }}" alt="{{ cloth.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ cloth.location_city }}</p>
+            <p><strong>Address:</strong> {{ cloth.address }}</p>
+            <p><strong>Contact:</strong> {{ cloth.contact_number }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellary Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Jwellary Blog</h1>
+    <div class="blog-container">
+        {% for Jwellary in jewellres %}
+        <div class="blog-post">
+            <h2>{{ Jwellary.name }}</h2>
+            {% if Jwellary.image %}
+            <img src="{{ Jwellary.image.url }}" alt="{{ Jwellary.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Jwellary.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Jwellary.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Jwellary.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

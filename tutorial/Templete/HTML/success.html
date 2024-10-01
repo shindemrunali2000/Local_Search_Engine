@@ -1,0 +1,20 @@
+<!-- business/templates/business/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/success.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Business Registered Successfully!</h2>
+    <p>Thank you for registering your business. It will be reviewed shortly.</p>
+    <a href="{% url 'register_business' %}" class="btn btn-primary">Register Another Business</a>
+</div>
+
+</body>
+</html>

@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User 
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
 
 
-# Create your models here.
 
 choice=(('java','java'),
         ('python','python'),
@@ -59,8 +61,63 @@ class Contact_us(models.Model):
     phone=models.IntegerField(default=0)
     subject=models.CharField(max_length=20)
     message=models.CharField(max_length=20)
-    # product_Image=models.ImageField(upload_to='adverties/image',default=0)
+    
     
     
     def __str__(self):
         return f"{self.name} {self.email}"
+    
+
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user.username
+
+
+class SignUpForm(UserCreationForm):
+    first_name = forms.CharField(max_length=30, required=True, help_text='First Name')
+    last_name = forms.CharField(max_length=30, required=True, help_text='Last Name')
+    email = forms.EmailField(max_length=254, required=True, help_text='Valid email address required')
+
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+   
+    def __str__(self):
+        return self.user.username
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=254)
+    contact_number = models.CharField(max_length=15, blank=True, null=True)
+    subject = models.CharField(max_length=200, blank=True, null=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"Message from {self.name} - {self.subject}"
+
+
+
+class Business(models.Model):
+    name = models.CharField(max_length=255)
+    business_type = models.CharField(max_length=255)
+    location_city = models.CharField(max_length=100)
+    contact_number = models.CharField(max_length=15)
+    address = models.TextField()
+    owner_name = models.CharField(max_length=255)
+    description = models.TextField(max_length=300)
+    image = models.ImageField(upload_to='business_images/')
+
+    def __str__(self):
+        return f"{self.name} - {self.business_type}"

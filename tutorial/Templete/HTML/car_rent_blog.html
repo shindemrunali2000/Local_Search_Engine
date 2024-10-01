@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Car Rent Blog</h1>
+    <div class="blog-container">
+        {% for car_rental in car_rentals %}
+        <div class="blog-post">
+            <h2>{{ car_rental.name }}</h2>
+            {% if car_rental.image %}
+            <img src="{{ car_rental.image.url }}" alt="{{ car_rental.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ car_rental.location_city }}</p>
+            <p><strong>Contact:</strong> {{ car_rental.contact_number }}</p>
+            <p><strong>Address:</strong> {{ car_rental.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

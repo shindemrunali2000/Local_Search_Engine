@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Travel Blog</h1>
+    <div class="blog-container">
+        {% for Travel in Travels %}
+        <div class="blog-post">
+            <h2>{{ Travel.name }}</h2>
+            {% if Travel.image %}
+            <img src="{{ Travel.image.url }}" alt="{{ Travel.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Travel.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Travel.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Travel.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
