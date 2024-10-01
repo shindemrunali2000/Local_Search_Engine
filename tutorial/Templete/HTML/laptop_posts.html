@@ -1,0 +1,28 @@
+
+{% load static %}  <!-- Load the static template tag library -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Listings</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Available Laptops</h1>
+
+    <div class="laptop-container">
+        {% for laptop in laptops %}
+            <div class="laptop-post">
+                <img src="{{ laptop.product_Image.url }}" alt="{{ laptop.product_name }}">
+                <h2>{{ laptop.product_name }}</h2>
+                <p>Category: {{ laptop.category }}</p>
+                <p>Price: ${{ laptop.price }}</p>
+                <p>Location: {{ laptop.location_City }}</p>
+                <p>Contact: {{ laptop.contact_Number }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

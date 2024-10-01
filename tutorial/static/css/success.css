@@ -1,0 +1,50 @@
+/* success.css */
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container styles */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Header styles */
+h2 {
+    color: #28a745; /* Green */
+    margin-bottom: 15px;
+}
+
+/* Success message styles */
+.success-message {
+    font-size: 1.2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Button styles */
+.btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Align button with text */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

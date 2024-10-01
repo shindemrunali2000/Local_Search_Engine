@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results for {{ city }} - {{ category }}</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    {% if results %}
+        <div class="blog-container">
+            {% for business in results %}
+            <div class="blog-post">
+                <h2>{{ business.name }}</h2>
+                {% if business.image %}
+                <img src="{{ business.image.url }}" alt="{{ business.name }}">
+                {% endif %}
+                <p><strong>City:</strong> {{ business.location_city }}</p>
+                <p><strong>Contact:</strong> {{ business.contact_number }}</p>
+                <p><strong>Address:</strong> {{ business.address }}</p>
+                <a href="{% url 'business_detail' business.id %}">
+                    <button class="order-button">View Details</button>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No businesses found matching your search criteria.</p>
+    {% endif %}
+    
+</body>
+</html>

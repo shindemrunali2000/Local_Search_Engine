@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
     <link rel="stylesheet" href="../static/css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/font_awsome.css">
 </head>
 <body>
@@ -20,19 +22,19 @@
                 <img src="../static/images.png" alt="Justdial Logo" height="25" width="102" class="image">
             </a> 
         <li class="action"><a href="#">Home</a></li>
-        <li><a href="#">Language</a>
-        <div class="sub-menu-1">
+        <li><a href="register">Free Listing</a>
+        <!-- <div class="sub-menu-1">
             <ul>
                 <li><a href="#">English</a></li>
                 <li><a href="#">Hindi</a></li>
                 <li><a href="Marathi">Marathi</a></li>
                 <li><a href="#">ગુજરાતી</a></li>
             </ul>
-        </div>
+        </div> -->
     </li>
         <li><a href="adverties">Advrties</a></li>
         <li><a href="#">services</a></li>
-        <li><a href="contactus">Contact_us</a></li>
+        <li><a href="contact-us">Contact_us</a></li>
          
         <div class="m">
             <li><a href="signup">Signup</a></li>
@@ -56,62 +58,89 @@
               </form>
   
             </div>
-        <div class="nav-search border">
-            <div class="search_city">
-            <input  placeholder="Enter your cit  " class="search-input_1">
-           
-        </div>
-         <!-- <input placeholder="Search Anything" class="search-input"> -->
-         <select class="search-input" name="category" required="">
-            <option value="">Select Category &nbsp;</option>
-          <option class="dropdown-item" value="7">Restaurant</option>
-          <option class="dropdown-item" value="12">Doctors</option>
-          <option class="dropdown-item" value="15">Groceries</option>
-          <option class="dropdown-item" value="17">Electrician</option>
-          <option class="dropdown-item" value="18">Contractor</option>
-          <option class="dropdown-item" value="19">Consultant</option>
-          <option class="dropdown-item" value="20">Electronics</option>
-          <option class="dropdown-item" value="21">Colleges</option>
-          <option class="dropdown-item" value="23">Chartered Accountant</option>
-          <option class="dropdown-item" value="27">Information Technology</option>
-          <option class="dropdown-item" value="276">School</option>
-          <option class="dropdown-item" value="286">Hospital</option>
-          <option class="dropdown-item" value="287">Polytechnic College</option>
-          <option class="dropdown-item" value="288">I.T.I.College</option>
-          <option class="dropdown-item" value="289">Kids School</option>
-          <option class="dropdown-item" value="290">Technical Institute </option>
-          <option class="dropdown-item" value="291">Jwellers </option>
-          <option class="dropdown-item" value="293">Gems&amp; Jwellers </option>
-          <option class="dropdown-item" value="294">Paramedical College </option>
-          <option class="dropdown-item" value="295">Heart &amp; Chest Hospital </option>
-          <option class="dropdown-item" value="296">Arthopedic Hospital</option>
-          <option class="dropdown-item" value="297">Children's Hospital </option>
-          <option class="dropdown-item" value="298">Homeopathic Clinic </option>
-          <option class="dropdown-item" value="299">Dental Clinic </option>
-          <option class="dropdown-item" value="300">Eye Hospital</option>
-          <option class="dropdown-item" value="301">E.N.T. Clinic </option>
-          <option class="dropdown-item" value="302">Diagnostic Centre </option>
-          <option class="dropdown-item" value="303">Physiotherapy Clinic </option>
-          <option class="dropdown-item" value="306">Toor &amp; Travel's</option>
-          <option class="dropdown-item" value="307">Personalities</option>
-          <option class="dropdown-item" value="309">Medical Institute </option>
-          <option class="dropdown-item" value="312">Academy </option>
-          <option class="dropdown-item" value="313">Sr.Secendry Schoo</option>
-          <option class="dropdown-item" value="314">University </option>
-          <option class="dropdown-item" value="315">P.G.College</option>
-          <option class="dropdown-item" value="316">Nursing College </option>
-          <option class="dropdown-item" value="317">Management Institute</option>
-          <option class="dropdown-item" value="318">Commercial Industries</option>
-          <option class="dropdown-item" value="319">Domestic Industries</option>
-          <option class="dropdown-item" value="320">Agro Industries</option>
-          <option class="dropdown-item" value="321">Computer Academy</option>
-          <option class="dropdown-item" value="322">Coching Institute</option>
-          <option class="dropdown-item" value="323">Car Parlar</option>
-          <option class="dropdown-item" value="324">Fitness Center</option>
-          <option class="dropdown-item" value="325">Hardware</option>
-          <option class="dropdown-item" value="326">Home Furnishing</option>
-          <option class="dropdown-item" value="327">Medical Agencies</option>
-          <option class="dropdown-item" value="328">Mobiles</option>
+            <form action="{% url 'search_results' %}" method="GET" class="search-form">
+              <div class="nav-search border">
+                  <div class="search_city">
+                      <input name="location_city" placeholder="Enter your city" class="search-input_1" required>
+                  </div>
+        
+                  <select name="business_type" class="search-input" required>
+              <option value="">Select Category</option>
+              <option value="Restaurants">Restaurant</option>
+              <option value="Cloths">Cloths</option>
+              <option value="Doctors">Doctor</option>
+              <option value="Automobile">Automobile</option>
+              <option value="Home Service">Home Service</option>
+              <option value="Logistics">Logistics</option>
+              <option value="Event Organizer">Event Organizer</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Photography">Photography</option>
+              <option value="clinics">clinics</option>
+              <option value="jewellres">jewellres</option>
+              <option value="schools">schools</option>
+              <option value="Electronics">Electronics</option>
+              <option  value="Fitness">Fitness </option>
+              <option  value="Travels">Travel's </option>
+
+
+
+
+            <option value="Groceries">Groceries</option>
+            <option value="Electronics">Electronics</option>
+          <option  value="Contractor">Contractor</option>
+          <option value="Consultant">Consultant</option>
+          <option  value="Electronics">Electronics</option>
+          <option  value="College">Colleges</option>
+          <option  value="Chartered Accountant">Chartered Accountant</option>
+          <option value="Information Technology">Information Technology</option>
+          <option  value="School">School</option>
+          <option  value="Hospital">Hospital</option>
+          <option value="Polytechnic College">Polytechnic College</option>
+          <option  value="I.T.I.College">I.T.I.College</option>
+          <option  value="Kids School">Kids School</option>
+          <option  value="Technical Institute">Technical Institute </option>
+         
+          <option  value="Paramedical College">Paramedical College </option>
+          <option value="Heart Chest Hospital ">Heart Chest Hospital </option>
+          <option  value="Arthopedic Hospital">Arthopedic Hospital</option>
+          <option  value="Children's Hospital">Children's Hospital </option>
+          <option value="Homeopathic Clinic">Homeopathic Clinic </option>
+          <option  value="Dental Clinic">Dental Clinic </option>
+          <option  value="Eye Hospital">Eye Hospital </option>
+          <option  value="E.N.T. Clinic">E.N.T. Clinic </option>
+          <option  value="Diagnostic Centre">Diagnostic Centre </option>
+          <option  value="Physiotherapy Clinic">Physiotherapy Clinic </option>
+         
+          <option  value="Personalities">Personalities </option>
+          <option  value="Medical Institute">Medical Institute </option>
+          <option  value="Academy">Academy </option>
+          <option  value="Sr.Secendry School">Sr.Secendry School </option>
+          <option  value="University">University </option>
+          <option  value="P.G.College">P.G.College </option>
+          <option  value="Nursing College">Nursing College </option>
+          <option  value="Management Institute">Management Institute </option>
+          <option  value="Commercial Industries">Commercial Industries</option>
+          <option  value="Domestic Industries">Domestic Industries </option>
+          <option  value="Agro Industries">Agro Industries </option>
+          <option  value="Computer Academy">Computer Academy </option>
+          <option  value="Coching Institute">Coching Institute </option>
+          <option  value="Car Parlar">Car Parlar </option>
+          <option  value="Hardware">Hardware </option>
+          <option  value="Home Furnishing">Home Furnishing </option>
+          <option  value="Medical Agencies">Medical Agencies </option>
+          <option  value="Mobiles">Mobiles </option>
+          <option  value="Petrol Pump">Petrol Pump </option>
+          <option  value="Real Estate">Real Estate </option>
+          <option  value="Security Services">Security Services </option>
+          <option  value="Tyre">Tyre </option>
+          <option  value="Traders">Traders </option>
+          <option  value="Transport">Transport </option>
+          <option  value="Adocates">Adocates </option>
+          <option  value="Education">Education </option>
+          <option  value="Furniture">Furniture </option>
+          <option  value="Gas Agencies">Gas Agencies </option>
+          <option  value="Flower Shop">Flower Shop </option>
+          <option  value="Police Station">Police Station </option>
           <option class="dropdown-item" value="329">Petrol Pump</option>
           <option class="dropdown-item" value="330">Real Estate</option>
           <option class="dropdown-item" value="331">Security Services</option>
@@ -164,13 +193,13 @@
           <option class="dropdown-item" value="408">Pharmacy College</option>
           <option class="dropdown-item" value="409">Hotel &amp; Restorent</option>
           <option class="dropdown-item" value="410">Paint Store</option>
-          <option class="dropdown-item" value="411">Photography &amp; Lab</option>
-          <option class="dropdown-item" value="412">Kitchen Assesarrie</option>                
+          <option  value="411">Photography &amp; Lab</option>
+          <option value="412">Kitchen Assesarrie</option>                
         </select>
-            <div class="Search-icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-           
+        <button type="submit" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+          </a>
         </div>
         </div>
         </div>
@@ -183,108 +212,109 @@
               <div class="cat-icons">
                 
                 
-              <a href="show_categories?category=11">
+              <a href="cloths">
                   <div class="mainicon icon maida-laptop">
-                      <i class="fa-solid fa-laptop"></i>
-                    <span class="text-icon">Laptop</span>
+                    <i class="fa-sharp fa-solid fa-shirt"></i>
+                    <span class="text-icon">Cloths</span>
+                    
                   </div>
                 </a>
                 
 
 
-                <a href="show_categories?category=18">
+                <a href="restaurants">
                   <div class="mainicon icon maida-hammer">
                     <i class="fa-solid fa-hotel"></i>
-                    <span class="text-icon">  Hotelss  </span>
+                    <span class="text-icon">Restaurant </span>
                   </div>
                 </a>
                 
-                <a href="show_categories?category=15">
+                <a href="college">
                   <div class="mainicon icon maida-groceries">
                     <i class="fa-solid fa-graduation-cap"></i>
-                    <span class="text-icon">Education</span>
+                    <span class="text-icon">Colleges</span>
                     </div>
                 </a>
-                <a href="show_categories?category=1">
+                <a href="carrent">
                   <div class="mainicon icon maida-car-1">
                     <i class="fa-solid fa-car"></i>
-                    <span class="text-icon">CarRent</span>
+                    <span class="text-icon">automobile</span>
                   </div>
                 </a>
                
                 </a>
-                <a href="show_categories?category=14">
+                <a href="fitness">
                   <div class="mainicon icon maida-soccer">
                     <i class="fa-solid fa-dumbbell"></i>
                     <span class="text-icon">Fitness</span>
                   </div>
                 </a>
                 
-                <a href="show_categories?category=13">
+                <a href="home_service">
                   <div class="mainicon icon maida-homeservices">
                     <i class="fa-solid fa-house"></i>
                     <span style="white-space: nowrap;font-size :12px;" class="text-icon">Home Services</span>
                   </div>
                 </a>
                
-                <a href="show_categories?category=5">
+                <a href="travels">
                   <div class="mainicon icon maida-Travel">
                     <i  class="fa-solid fa-plane"></i>
                     <span class="text-icon">Travels</span>
                   </div>
                 </a>
-                <a href="show_categories?category=6">
+                <a href="logistics">
                   <div class="mainicon icon maida-delivery-transport-2">
                     <i class="fa-solid fa-truck-fast"></i>
                     <span class="text-icon">Logistics</span>
                   </div>
                 </a>
-                <a href="show_categories?category=20">
+                <a href="electronics">
                   <div class="mainicon icon maida-display">
                     <i class="fa-solid fa-computer"></i>
                     <span class="text-icon">Electronics</span>
                   </div>
                 </a>
-                <a href="show_categories?category=16">
+                <a href="event_organizer">
                   <div class="mainicon icon maida-event">
                     <i class="fa-solid fa-calendar"></i>
                     <span style="white-space: nowrap;font-size :12px;" class="text-icon">Event Oranganizer</span>
                   </div>
                 </a>
-                <a href="show_categories?category=12">
+                <a href="doctor">
                   <div class="mainicon icon maida-case-medic">
                     <i class="fa-solid fa-stethoscope"></i>
                     <span class="text-icon">Doctors</span>
                   </div>
                 </a>
-                <a href="show_categories?category=2">
+                <a href="entertainment">
                   <div class="mainicon">
                     <i class="fa fa-film" aria-hidden="true"></i>
                     <span class="text-icon">Entertainment</span>
                   </div>
                 </a>
-                <a href="show_categories?category=8">
+                <a href="photography">
                   <div class="mainicon icon">
                     <i class="fa fa-camera bigfonts" aria-hidden="true"></i>
                   <span class="text-icon">Photography</span>
                   </div>
                 </a>
-                <a href="show_categories?category=17">
+                <a href="clinics">
                   <div class="mainicon icon maida-Electrician">
-                    <i class="fa-solid fa-plug"></i>
-                    <span class="text-icon">Electrician</span>
+                    <i class="fa-solid fa-house-chimney-medical"></i>
+                    <span class="text-icon">Clinics</span>
                   </div>
                 </a>
-                <a href="show_categories?category=22">
+                <a href="jewelry">
                   <div class="mainicon icon"> 
-                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                  <span class="text-icon">Education</span>
+                    <i class="fa-sharp fa-regular fa-gem"></i>
+                  <span class="text-icon">Jwellary</span>
                   </div>
                 </a>
-                <a href="show_categories?category=21">
+                <a href="school">
                  <div class="mainicon">
                     <i class="fa fa-book" aria-hidden="true"></i>
-                   <span class="text-icon">Colleges</span>
+                   <span class="text-icon">Schoolsss</span>
                   </div>
                 </a>
                 <a href="show_categories?category=25">

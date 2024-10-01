@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+   
+</head>
+<body>
+    <h1>Electronics Blog</h1>
+    <div class="blog-container">
+        {% for electronic in electronics %}
+        <div class="blog-post">
+            <h2>{{ electronic.name }}</h2>
+            {% if electronic.image %}
+            <img src="{{ electronic.image.url }}" alt="{{ electronic.name }}">
+            {% endif %}
+            <!-- <p><strong>Type:</strong> {{ electronic.business_type }}</p> -->
+            <!-- <p><strong>City:</strong> {{ electronic.location_city }}</p> -->
+            <!-- <p><strong>Owner:</strong> {{ electronic.owner_name }}</p> -->
+            <p><strong>Address:</strong> {{ electronic.address }}</p>
+            <p><strong>Contact:</strong> {{ electronic.contact_number }}</p>
+            <!-- <p>{{ electronic.description }}</p> -->
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

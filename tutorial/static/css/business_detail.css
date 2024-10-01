@@ -1,0 +1,53 @@
+.business-detail {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.business-detail h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+}
+
+.business-image {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.business-detail p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.business-detail p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+.business-detail .description {
+    font-style: italic;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .business-detail {
+        padding: 15px;
+    }
+
+    .business-detail h1 {
+        font-size: 1.5em;
+    }
+
+    .business-image {
+        max-width: 300px;
+    }
+}

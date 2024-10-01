@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Photography Blog</h1>
+    <div class="blog-container">
+        {% for Photography in Photographys %}
+        <div class="blog-post">
+            <h2>{{ Photography.name }}</h2>
+            {% if Photography.image %}
+            <img src="{{ Photography.image.url }}" alt="{{ Photography.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Photography.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Photography.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Photography.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

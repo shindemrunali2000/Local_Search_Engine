@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistic Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>Logistic Blog</h1>
+    <div class="blog-container">
+        {% for Logistic in Logistics %}
+        <div class="blog-post">
+            <h2>{{ Logistic.name }}</h2>
+            {% if Logistic.image %}
+            <img src="{{ Logistic.image.url }}" alt="{{ Logistic.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ Logistic.location_city }}</p>
+            <p><strong>Contact:</strong> {{ Logistic.contact_number }}</p>
+            <p><strong>Address:</strong> {{ Logistic.address }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

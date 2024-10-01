@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+</head>
+<body>
+    <h1>Restaurant Blog</h1>
+    <div class="blog-container">
+        {% for restaurant in restaurants %}
+        <div class="blog-post">
+            <h2>{{ restaurant.name }}</h2>
+            {% if restaurant.image %}
+            <img src="{{ restaurant.image.url }}" alt="{{ restaurant.name }}">
+            {% endif %}
+            <p><strong>Address:</strong> {{ restaurant.address }}</p>
+            <p><strong>Contact:</strong> {{ restaurant.contact_number }}</p>
+            <!-- <p>{{ restaurant.description }}</p> -->
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

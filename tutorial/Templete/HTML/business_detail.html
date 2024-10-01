@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results for {{ city }} - {{ category }}</title>
+    <link rel="stylesheet" href="../static/css/business_detail.css">
+</head>
+<body>
+<h1>{{ business.name }}</h1>
+
+<div class="business-detail">
+    {% if business.image %}
+    <img src="{{ business.image.url }}" alt="{{ business.name }}">
+    {% endif %}
+    <p><strong>City:</strong> {{ business.location_city }}</p>
+    <p><strong>Contact:</strong> {{ business.contact_number }}</p>
+    <p><strong>Address:</strong> {{ business.address }}</p>
+    <p><strong>Business Type:</strong> {{ business.business_type }}</p>
+    <p><strong>Owner Name:</strong> {{ business.owner_name }}</p>
+    <p><strong>Description:</strong> {{ business.description }}</p>
+    <a href="{% url 'home' %}">Back to Dashboard</a>
+</div>
+</body>
+</html>

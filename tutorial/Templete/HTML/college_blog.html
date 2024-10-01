@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+    
+</head>
+<body>
+    <h1>College Blog</h1>
+    <div class="blog-container">
+        {% for college in colleges %}
+        <div class="blog-post">
+            <h2>{{ college.name }}</h2>
+            {% if college.image %}
+            <img src="{{ college.image.url }}" alt="{{ college.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ college.location_city }}</p>
+            <p><strong>Address:</strong> {{ college.address }}</p>
+            <p><strong>Contact:</strong> {{ college.contact_number }}</p>
+            <button class="order-button">View Details</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

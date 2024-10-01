@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Blog</title>
+    <link rel="stylesheet" href="../static/css/blog.css">
+
+</head>
+<body>
+    <h1>School Blog</h1>
+    <div class="blog-container">
+        {% for school in schools %}
+        <div class="blog-post">
+            <h2>{{ school.name }}</h2>
+            {% if school.image %}
+            <img src="{{ school.image.url }}" alt="{{ school.name }}">
+            {% endif %}
+            <p><strong>City:</strong> {{ school.location_city }}</p>
+            <p><strong>Contact:</strong> {{ school.contact_number }}</p>
+            <p><strong>Address:</strong> {{ school.address }}</p>
+            <button class="order-button">View Details</button>
+        {% endfor %}
+    </div>
+</body>
+</html>
