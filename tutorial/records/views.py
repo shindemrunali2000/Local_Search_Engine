@@ -254,7 +254,7 @@ def search_results(request):
     location_city = request.GET.get('location_city')
     business_type = request.GET.get('business_type')
 
-    # Filter the businesses based on city and type
+    
     results = Business.objects.filter(location_city=location_city, business_type=business_type)
 
     context = {
